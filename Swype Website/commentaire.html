@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SWYPE - Téléchargement</title>
+    <title>SWYPE</title>
     <style>
         body {
             margin: 0;
@@ -195,95 +195,77 @@
     </style>
 </head>
 <body>
-
     <div class="header">
         <h1>Swype - Commencez votre aventure</h1>
         <form action="https://gofile.io/d/zGlkYL">
             <button class="btn-primary">Télécharger Maintenant</button>
         </form>
     </div>
-
+    
     <nav>
         <a href="index.html">Acceuil</a>
         <a href="features.html">Caractéristiques</a>
-        <a href="#community">Communauté</a>
+        <a href="commentaire.html">Communauté</a>
+        
+        
     </nav>
-
-    <div class="features">
-        <h2>Caractéristiques du jeu</h2>
-        <div class="cards">
-            <div class="card">
-                <img src="art/sword.png" alt="Sword" style="width: 50px;">
-                    <h3>Armes</h3>
-                    <p>Utilise ton épée pour vaincre les monstres.</p>
-            </div>
-            <div class="card">
-                <img src="art/shield.png" alt="Shield" style="width: 50px;">
-                    <h3>Défense</h3>
-                    <p>Protège toi, améliore tes compêtence et avance.</p>
-            </div>
-            <div class="card">
-                <img src="art/slime.png" alt="Slime" style="width: 50px;">
-                    <h3>Monstre</h3>
-                    <p>Combat des monstres, jusqu'à atteindre le boss final du donjon.</p>
-            </div>
-        </div>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWYPE</title>
+<div class="reviews" id="community">
+    <h2>Commentaires et Avis</h2>
+    <div class="review-form">
+        <h3>Laissez votre avis</h3>
+        <form action="#">
+            <input type="text" id="name" placeholder="Votre nom" required>
+            <textarea id="comment" placeholder="Votre commentaire..." required></textarea>
+            <button type="submit">Publier</button>
+        </form>
     </div>
 
-    <div class="reviews" id="community">
-        <h2>Commentaires et Avis</h2>
-        <div class="review-form">
-            <h3>Laissez votre avis</h3>
-            <form action="#">
-                <input type="text" id="name" placeholder="Votre nom" required>
-                <textarea id="comment" placeholder="Votre commentaire..." required></textarea>
-                <button type="submit">Publier</button>
-            </form>
+    <div class="review-list">
+        <div class="review-item">
+            <p class="author">Julien</p>
+            <p>Ce jeu est incroyable ! L'histoire est captivante et les combats sont très dynamiques. J'ai hâte de voir la suite.</p>
         </div>
-
-        <div class="review-list">
-            <div class="review-item">
-                <p class="author">Julien</p>
-                <p>Ce jeu est incroyable ! L'histoire est captivante et les combats sont très dynamiques. J'ai hâte de voir la suite.</p>
-            </div>
-            <div class="review-item">
-                <p class="author">Marie</p>
-                <p>J'adore l'ambiance de ce jeu, mais certains niveaux sont un peu difficiles. Une expérience géniale dans l'ensemble.</p>
-            </div>
-            <div class="review-item">
-                <p class="author">Thomas</p>
-                <p>Les graphismes sont magnifiques, et l'histoire est vraiment originale. Vivement la prochaine mise à jour !</p>
-            </div>
+        <div class="review-item">
+            <p class="author">Marie</p>
+            <p>J'adore l'ambiance de ce jeu, mais certains niveaux sont un peu difficiles. Une expérience géniale dans l'ensemble.</p>
+        </div>
+        <div class="review-item">
+            <p class="author">Thomas</p>
+            <p>Les graphismes sont magnifiques, et l'histoire est vraiment originale. Vivement la prochaine mise à jour !</p>
         </div>
     </div>
+</div>
 
-    <script>
-        function ajouterCommentaire(event) {
-            event.preventDefault(); 
-            const nom = document.getElementById("name").value;
-            const commentaire = document.getElementById("comment").value;
-            if (nom && commentaire) {
-                const nouvelleRevue = document.createElement("div");
-                nouvelleRevue.classList.add("review-item");
-                nouvelleRevue.innerHTML = `<p class="author">${nom}</p><p>${commentaire}</p>`;
-                const listeCommentaires = document.querySelector(".review-list");
-                listeCommentaires.appendChild(nouvelleRevue);
-                document.getElementById("name").value = "";
-                document.getElementById("comment").value = "";
-            }
+<script>
+    function ajouterCommentaire(event) {
+        event.preventDefault(); 
+        const nom = document.getElementById("name").value;
+        const commentaire = document.getElementById("comment").value;
+        if (nom && commentaire) {
+            const nouvelleRevue = document.createElement("div");
+            nouvelleRevue.classList.add("review-item");
+            nouvelleRevue.innerHTML = `<p class="author">${nom}</p><p>${commentaire}</p>`;
+            const listeCommentaires = document.querySelector(".review-list");
+            listeCommentaires.appendChild(nouvelleRevue);
+            document.getElementById("name").value = "";
+            document.getElementById("comment").value = "";
         }
-    
-        document.querySelector(".review-form form").addEventListener("submit", ajouterCommentaire);
-    </script>
+    }
 
-    <div class="footer">
-        <p>Rejoignez-nous sur nos réseaux sociaux :</p>
-        <div class="social-icons">
-            <a href="https://twitter.com/"><img src="art/twitter_icon.png" alt="Twitter"></a>
-            <a href="https://discord.com/"><img src="art/discord_icon.png" alt="Discord"></a>
-        </div>
-        <p>&copy; 2025 Swype RPG. Tous droits réservés.</p>
+    document.querySelector(".review-form form").addEventListener("submit", ajouterCommentaire);
+</script>
+
+<div class="footer">
+    <p>Rejoignez-nous sur nos réseaux sociaux :</p>
+    <div class="social-icons">
+        <a href="https://twitter.com/"><img src="art/twitter_icon.png" alt="Twitter"></a>
+        <a href="https://discord.com/"><img src="art/discord_icon.png" alt="Discord"></a>
     </div>
+    <p>&copy; 2025 Swype RPG. Tous droits réservés.</p>
+</div>
 
 </body>
 </html>
