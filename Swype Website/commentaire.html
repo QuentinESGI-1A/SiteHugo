@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Partagez vos avis et découvrez les commentaires des autres joueurs sur Swype.">
     <title>SWYPE</title>
     <style>
         body {
@@ -116,7 +117,8 @@
             background: #3c3a33;
             padding: 20px;
             border-radius: 10px;
-            width: 50%;
+            width: 100%;
+            max-width: 600px;
             margin: 0 auto;
             text-align: left;
         }
@@ -154,6 +156,8 @@
 
         .reviews .review-form button:hover {
             background-color: #f5c042;
+            transform: scale(1.1);
+            transition: transform 0.3s ease;
         }
 
         .reviews .review-list {
@@ -206,66 +210,62 @@
         <a href="index.html">Acceuil</a>
         <a href="features.html">Caractéristiques</a>
         <a href="commentaire.html">Communauté</a>
-        
-        
     </nav>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SWYPE</title>
-<div class="reviews" id="community">
-    <h2>Commentaires et Avis</h2>
-    <div class="review-form">
-        <h3>Laissez votre avis</h3>
-        <form action="#">
-            <input type="text" id="name" placeholder="Votre nom" required>
-            <textarea id="comment" placeholder="Votre commentaire..." required></textarea>
-            <button type="submit">Publier</button>
-        </form>
+
+    <div class="reviews" id="community">
+        <h2>Commentaires et Avis</h2>
+        <div class="review-form">
+            <h3>Laissez votre avis</h3>
+            <form action="#" id="commentForm">
+                <input type="text" id="name" placeholder="Votre nom" required aria-label="Votre nom">
+                <textarea id="comment" placeholder="Votre commentaire..." required aria-label="Votre commentaire"></textarea>
+                <button type="submit" aria-label="Publier votre commentaire">Publier</button>
+            </form>
+        </div>
+
+        <div class="review-list">
+            <div class="review-item">
+                <p class="author">Julien</p>
+                <p>Ce jeu est incroyable ! L'histoire est captivante et les combats sont très dynamiques. J'ai hâte de voir la suite.</p>
+            </div>
+            <div class="review-item">
+                <p class="author">Marie</p>
+                <p>J'adore l'ambiance de ce jeu, mais certains niveaux sont un peu difficiles. Une expérience géniale dans l'ensemble.</p>
+            </div>
+            <div class="review-item">
+                <p class="author">Thomas</p>
+                <p>Les graphismes sont magnifiques, et l'histoire est vraiment originale. Vivement la prochaine mise à jour !</p>
+            </div>
+        </div>
     </div>
 
-    <div class="review-list">
-        <div class="review-item">
-            <p class="author">Julien</p>
-            <p>Ce jeu est incroyable ! L'histoire est captivante et les combats sont très dynamiques. J'ai hâte de voir la suite.</p>
-        </div>
-        <div class="review-item">
-            <p class="author">Marie</p>
-            <p>J'adore l'ambiance de ce jeu, mais certains niveaux sont un peu difficiles. Une expérience géniale dans l'ensemble.</p>
-        </div>
-        <div class="review-item">
-            <p class="author">Thomas</p>
-            <p>Les graphismes sont magnifiques, et l'histoire est vraiment originale. Vivement la prochaine mise à jour !</p>
-        </div>
-    </div>
-</div>
-
-<script>
-    function ajouterCommentaire(event) {
-        event.preventDefault(); 
-        const nom = document.getElementById("name").value;
-        const commentaire = document.getElementById("comment").value;
-        if (nom && commentaire) {
-            const nouvelleRevue = document.createElement("div");
-            nouvelleRevue.classList.add("review-item");
-            nouvelleRevue.innerHTML = `<p class="author">${nom}</p><p>${commentaire}</p>`;
-            const listeCommentaires = document.querySelector(".review-list");
-            listeCommentaires.appendChild(nouvelleRevue);
-            document.getElementById("name").value = "";
-            document.getElementById("comment").value = "";
+    <script>
+        function ajouterCommentaire(event) {
+            event.preventDefault(); 
+            const nom = document.getElementById("name").value;
+            const commentaire = document.getElementById("comment").value;
+            if (nom && commentaire) {
+                const nouvelleRevue = document.createElement("div");
+                nouvelleRevue.classList.add("review-item");
+                nouvelleRevue.innerHTML = `<p class="author">${nom}</p><p>${commentaire}</p>`;
+                const listeCommentaires = document.querySelector(".review-list");
+                listeCommentaires.appendChild(nouvelleRevue);
+                document.getElementById("name").value = "";
+                document.getElementById("comment").value = "";
+            }
         }
-    }
 
-    document.querySelector(".review-form form").addEventListener("submit", ajouterCommentaire);
-</script>
+        document.getElementById("commentForm").addEventListener("submit", ajouterCommentaire);
+    </script>
 
-<div class="footer">
-    <p>Rejoignez-nous sur nos réseaux sociaux :</p>
-    <div class="social-icons">
-        <a href="https://twitter.com/"><img src="art/twitter_icon.png" alt="Twitter"></a>
-        <a href="https://discord.com/"><img src="art/discord_icon.png" alt="Discord"></a>
+    <div class="footer">
+        <p>Rejoignez-nous sur nos réseaux sociaux :</p>
+        <div class="social-icons">
+            <a href="https://twitter.com/"><img src="art/twitter_icon.png" alt="Twitter"></a>
+            <a href="https://discord.com/"><img src="art/discord_icon.png" alt="Discord"></a>
+        </div>
+        <p>&copy; 2025 Swype RPG. Tous droits réservés.</p>
     </div>
-    <p>&copy; 2025 Swype RPG. Tous droits réservés.</p>
-</div>
 
 </body>
 </html>
