@@ -252,6 +252,38 @@
         </div>
     </div>
 
+    <script>
+        
+        function ajouterCommentaire(event) {
+            event.preventDefault(); 
+   
+            const nom = document.getElementById("name").value;
+            const commentaire = document.getElementById("comment").value;
+    
+
+            if (nom && commentaire) {
+
+                const nouvelleRevue = document.createElement("div");
+                nouvelleRevue.classList.add("review-item");
+    
+
+                nouvelleRevue.innerHTML = `<p class="author">${nom}</p><p>${commentaire}</p>`;
+    
+
+                const listeCommentaires = document.querySelector(".review-list");
+                listeCommentaires.appendChild(nouvelleRevue);
+    
+
+                document.getElementById("name").value = "";
+                document.getElementById("comment").value = "";
+            }
+        }
+    
+        // Ajoute l'événement de soumission du formulaire
+        document.querySelector(".review-form form").addEventListener("submit", ajouterCommentaire);
+    </script>
+    
+
     <div class="footer">
         <p>Rejoignez-nous sur nos réseaux sociaux :</p>
         <div class="social-icons">
@@ -260,6 +292,7 @@
         </div>
         <p>&copy; 2025 Swype RPG. Tous droits réservés.</p>
     </div>
+
 
 </body>
 </html>
