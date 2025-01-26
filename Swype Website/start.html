@@ -43,25 +43,24 @@
         nav a:hover {
             color: #f5c042;
         }
-        .btn-primary {
-            background: url('art/papier.png') no-repeat center center;
-            background-size: 100% 100%; /* Ajuste l'image pour remplir le bouton */
-            color: #2e2a24;
+
+        .button {
+            margin: 20px auto;
+            padding: 15px 30px;
+            background: #f5c042;
+            color: #3c3a33;
             font-family: 'Georgia', serif;
-            padding: 1rem 2rem;
-            font-size: 1.5rem;
-            border: none; /* Retirer le contour */
-            cursor: pointer;
+            border: none;
             border-radius: 5px;
-            box-shadow: none; /* Retirer la bordure de l'ombre */
+            cursor: pointer;
+            font-size: 1.2em;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
             display: inline-block;
-            transition: transform 0.3s ease;
-            outline: none; /* Supprimer le contour au focus */
-            width: auto; /* Ajuste la largeur du bouton */
+            transition: transform 0.2s ease;
         }
 
-        .btn-primary:hover {
-            transform: scale(1.1); /* Effet d'agrandissement au survol */
+        .button:hover {
+            transform: scale(1.1);
         }
 
         .features {
@@ -195,7 +194,7 @@
     <div class="header">
         <h1>Swype - Commencez votre aventure</h1>
         <form action="https://gofile.io/d/zGlkYL">
-            <button class="btn-primary">Télécharger Maintenant</button>
+            <button class="button">Télécharger Maintenant</button>
         </form>
     </div>
 
