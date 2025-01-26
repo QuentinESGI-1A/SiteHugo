@@ -3,157 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SWYPE - Caractéristiques</title>
+    <title>SWYPE</title>
     <style>
         body {
             margin: 0;
             font-family: 'Georgia', serif;
-            background-color: #2b1d0e;
-            color: #fff;
-            overflow-x: hidden;
+            background-color: #2e2a24;
+            color: #f4e4c1;
         }
-
-        .header {
-            background: url("art/bk2.png") no-repeat center center/cover;
+        header {
+            background: url("art/background.png") no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            padding: 100px 20px;
-            color: #fff;
-            font-size: 2em;
         }
-
-        .header h1 {
-            font-size: 3em;
-            font-family: 'MedievalSharp', serif;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        header h1 {
+            font-size: 4rem;
+            color: #f4e4c1;
+            text-shadow: 2px 2px 8px #000;
         }
-
         nav {
             background-color: #3c3a33;
             padding: 1rem;
             text-align: center;
         }
-
         nav a {
-            color: #d4af37;
+            color: #f4e4c1;
             margin: 0 15px;
             text-decoration: none;
             font-size: 1.2rem;
         }
-
         nav a:hover {
-            color: #f5c042;
+            color: #d4af37;
         }
-
-        .features {
-            background: #2e2a24;
-            padding: 50px 20px;
+        main {
+            padding: 2rem;
             text-align: center;
         }
-
-        .features h2 {
-            font-size: 2.5em;
-            margin-bottom: 30px;
+        .section {
+            margin-bottom: 3rem;
         }
-
-        .features .cards {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .card {
-            background: #3c3a33;
-            padding: 20px;
-            border-radius: 10px;
-            width: 250px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-            text-align: center;
-        }
-
-        .card img {
-            width: 100%;
-            border-radius: 10px;
-        }
-
-        .footer {
-            background: #3c3a33;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .footer .social-icons {
-            margin: 20px auto;
-        }
-
-        .footer .social-icons img {
-            width: 30px;
-            margin: 0 10px;
+        .btn-primary {
+            background: url('art/papier.png') no-repeat center center;
+            background-size: 100% 100%; /* Ajuste l'image pour remplir le bouton */
+            color: #2e2a24;
+            font-family: 'Georgia', serif;
+            padding: 1rem 2rem;
+            font-size: 1.5rem;
+            border: none; /* Retirer le contour */
             cursor: pointer;
+            border-radius: 5px;
+            box-shadow: none; /* Retirer la bordure de l'ombre */
+            display: inline-block;
+            transition: transform 0.3s ease;
+            outline: none; /* Supprimer le contour au focus */
+            width: auto; /* Ajuste la largeur du bouton */
+        }
+        .btn-primary:hover {
+            transform: scale(1.05); /* Effet d'agrandissement au survol */
+        }
+        footer {
+            background-color: #3c3a33;
+            color: #f4e4c1;
+            text-align: center;
+            padding: 1rem 0;
+        }
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .icon-grid div {
+            background: #413c35;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 2px 2px 5px #000;
         }
     </style>
 </head>
 <body>
-
-    <div class="header">
-        <h1>Les Caractéristiques de Swype</h1>
-        <p>Découvrez les éléments qui rendent Swype unique dans l'univers des jeux d'aventure !</p>
-    </div>
-
+    <header>
+        <h1>Embarqué dans l'univers de Swype</h1>
+    </header>
+    
     <nav>
-        <a href="index.html">Accueil</a>
-        <a href="start.html">Téléchargement</a>
+        <a href="start.html">Commencez l'aventure</a>
+        <a href="features.html">Caractéristiques</a>
         <a href="#community">Communauté</a>
     </nav>
-
-    <div class="features">
-        <h2>Caractéristiques du jeu</h2>
-        <div class="cards">
-            <div class="card">
-                <img src="art/sword.png" alt="Armes" style="width: 50px;">
-                <h3>Armes</h3>
-                <p>Utilisez votre épée pour combattre une variété de monstres. Débloquez des armes puissantes au fil de votre aventure.</p>
+    <main>
+        <section id="start" class="section">
+            <h2>Commencez votre aventure</h2>
+            <p>Commencez votre quête épique dans un monde d'aventure et de mystère. Êtes-vous prêt à jouer ?</p>
+            <form action="https://gofile.io/d/zGlkYL">
+                <button class="btn-primary">Jouer Maintenant</button>
+            </form>
+        </section>
+        <section id="features" class="section">
+            <h2>Caractéristiques du jeu</h2>
+            <div class="icon-grid">
+                <div>
+                    <img src="art/sword.png" alt="Sword" style="width: 50px;">
+                    <h3>Armes</h3>
+                    <p>Utilise ton épée pour vaincre les monstres.</p>
+                </div>
+                <div>
+                    <img src="art/shield.png" alt="Shield" style="width: 50px;">
+                    <h3>Défense</h3>
+                    <p>Protège toi, améliore tes compétences et avance.</p>
+                </div>
+                <div>
+                    <img src="art/slime.png" alt="Slime" style="width: 50px;">
+                    <h3>Monstre</h3>
+                    <p>Combat des monstres, jusqu'à atteindre le boss final du donjon.</p>
+                </div>
             </div>
-            <div class="card">
-                <img src="art/shield.png" alt="Défense" style="width: 50px;">
-                <h3>Défense</h3>
-                <p>Améliorez vos compétences en défense pour survivre aux attaques des monstres et des pièges. Protégez-vous à tout prix !</p>
-            </div>
-            <div class="card">
-                <img src="art/slime.png" alt="Monstre" style="width: 50px;">
-                <h3>Monstres</h3>
-                <p>Affrontez des créatures terrifiantes dans des donjons mystérieux. Chaque monstre a des attaques et des capacités uniques.</p>
-            </div>
-            <div class="card">
-                <img src="art/magie.png" alt="Magie" style="width: 50px;">
-                <h3>Magie</h3>
-                <p>Explorez la magie ancienne pour obtenir des pouvoirs puissants. Lancer des sorts peut être décisif lors des combats contre des ennemis plus forts.</p>
-            </div>
-            <div class="card">
-                <img src="art/level.png" alt="Niveaux" style="width: 50px;">
-                <h3>Progression des Niveaux</h3>
-                <p>Évoluez à travers différents niveaux et débloquez de nouveaux équipements, compétences et défis à chaque étape.</p>
-            </div>
-            <div class="card">
-                <img src="art/boss.png" alt="Boss" style="width: 50px;">
-                <h3>Boss Final</h3>
-                <p>Vaincre les boss vous permettra de débloquer de nouvelles zones et récompenses. Saurez-vous les battre et découvrir ce qui se cache au-delà ?</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="footer">
-        <p>Rejoignez-nous sur nos réseaux sociaux :</p>
-        <div class="social-icons">
-            <a href="https://twitter.com/toncompte" target="_blank">
-                <img src="art/twitter_icon.png" alt="Twitter">
-            </a>
-            <a href="https://discord.com/invite/tonserveur" target="_blank">
-                <img src="art/discord_icon.png" alt="Discord">
-            </a>
-        </div>
-        <p>&copy; 2025 Swype RPG. Tous droits réservés.</p>
-    </div>
-
+        </section>
+        <section id="community" class="section">
+            <h2>Rejoindre la Communauté</h2>
+            <p>Partage ton expérience et tes stratégies.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Swype. Tous droits réservés.</p>
+    </footer>
 </body>
 </html>
