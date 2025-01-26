@@ -58,12 +58,12 @@
             border-radius: 5px;
             box-shadow: none; /* Retirer la bordure de l'ombre */
             display: inline-block;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, background-color 0.3s ease;
             outline: none; /* Supprimer le contour au focus */
-            width: auto; /* Ajuste la largeur du bouton */
         }
         .btn-primary:hover {
             transform: scale(1.05); /* Effet d'agrandissement au survol */
+            
         }
         footer {
             background-color: #3c3a33;
@@ -83,6 +83,31 @@
             border-radius: 10px;
             box-shadow: 2px 2px 5px #000;
         }
+        /* Style pour la section de commentaires de la communauté */
+        .community-comments {
+            margin: 2rem 0;
+            background-color: #413c35;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 2px 2px 5px #000;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .community-comments ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .community-comments li {
+            background-color: #3c3a33;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border-radius: 5px;
+            color: #f4e4c1;
+        }
+        .community-comments li span {
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -91,19 +116,22 @@
     </header>
     
     <nav>
-        <a href="index.html">Acceuil</a>
+        <a href="index.html">Accueil</a>
         <a href="features.html">Caractéristiques</a>
         <a href="commentaire.html">Communauté</a>
-        
     </nav>
+    
     <main>
+        <!-- Section Jeu -->
         <section id="start" class="section">
             <h2>Commencez votre aventure</h2>
             <p>Commencez votre quête épique dans un monde d'aventure et de mystère. Êtes-vous prêt à jouer ?</p>
-            <form action="https://gofile.io/d/zGlkYL">
-                <button class="btn-primary">Jouer Maintenant</button>
+            <form action="https://gofile.io/d/zGlkYL" target="_blank">
+                <button class="btn-primary" type="submit" onclick="confirmPlay()">Jouer Maintenant</button>
             </form>
         </section>
+        
+        <!-- Section Caractéristiques -->
         <section id="features" class="section">
             <h2>Caractéristiques du jeu</h2>
             <div class="icon-grid">
@@ -124,13 +152,45 @@
                 </div>
             </div>
         </section>
+        
+        <!-- Section Communauté -->
         <section id="community" class="section">
             <h2>Rejoindre la Communauté</h2>
             <p>Partage ton expérience et tes stratégies.</p>
+
+            <!-- Section des commentaires -->
+            <div class="community-comments">
+                <h3>Derniers commentaires :</h3>
+                <ul>
+                    <li><span>Julien :</span> Ce jeu est incroyable ! Les monstres sont géniaux !</li>
+                    <li><span>Marie :</span> J'adore l'épée magique, elle est trop puissante !</li>
+                    <li><span>Thomas :</span> Les combats de boss sont vraiment difficiles mais satisfaisants !</li>
+                </ul>
+                <a href="commentaire.html" class="btn-primary">Partager un Commentaire</a>
+            </div>
         </section>
     </main>
+    
+    <!-- Footer -->
     <footer>
         <p>&copy; 2025 Swype. Tous droits réservés.</p>
+        <div>
+            <a href="https://twitter.com/toncompte" target="_blank">
+                <img src="art/twitter_icon.png" alt="Twitter" style="width: 30px; margin-right: 15px;">
+            </a>
+            <a href="https://discord.com/invite/tonserveur" target="_blank">
+                <img src="art/discord_icon.png" alt="Discord" style="width: 30px;">
+            </a>
+        </div>
     </footer>
+
+    <!-- Script pour la confirmation avant de commencer le jeu -->
+    <script>
+        function confirmPlay() {
+            if (!confirm("Êtes-vous prêt à commencer votre aventure ?")) {
+                event.preventDefault();
+            }
+        }
+    </script>
 </body>
 </html>
